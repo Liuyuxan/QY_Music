@@ -1,26 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/*
+ * @Author: 秋意微醺时
+ * @Date: 2024-03-11 15:12:28
+ * @Description: 启动页
+ */
+import React from 'react'
+import { useRoutes } from 'react-router-dom'
+import routes from '@/router/index'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <div className="App">{useRoutes(routes)}</div>
 }
 
-export default App;
+export default App
