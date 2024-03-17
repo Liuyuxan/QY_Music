@@ -6,7 +6,15 @@ const discoverSlice = createSlice({
     num: 123,
     message :'333'
   },
-  reducers: {}
+  reducers: {
+    changeMessageAction(state, { payload }) {
+      state.message = payload
+    }
+  }
 })
+
+export const { 
+  changeMessageAction
+} = discoverSlice.actions
 
 export default discoverSlice.reducer

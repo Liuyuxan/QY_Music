@@ -5,17 +5,22 @@
  */
 import { configureStore } from '@reduxjs/toolkit'
 import discoverReducer from './modules/discover'
-import { TypedUseSelectorHook, useSelector } from 'react-redux'
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 const store = configureStore({
   reducer: {
     discover: discoverReducer
   }
 })
 
+
 type GetStateFnType = typeof store.getState
-export type IrootState = ReturnType<GetStateFnType>
+type IrootState = ReturnType<GetStateFnType>
+type DispatchType = typeof store.dispatch
 
 // useAppSelector的hook，用这个来获取store存储的数据
 export const useAppSelector: TypedUseSelectorHook<IrootState> = useSelector
+// useAppDispatch的hook,用这个来派发action
+export const useAppDispatch: () => DispatchType = useDispatch
 
+// 导出状态管理库
 export default store
