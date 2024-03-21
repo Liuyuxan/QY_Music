@@ -12,7 +12,6 @@ const store = configureStore({
   }
 })
 
-
 type GetStateFnType = typeof store.getState
 type IrootState = ReturnType<GetStateFnType>
 type DispatchType = typeof store.dispatch
